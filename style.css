@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #3D3D3D;
+    color: #F5ECD5;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.haduh{
+    margin-bottom: 8px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input{
+    width: 180px;
+    background-color: #3D3D3D;
+    border: 2px solid #578E7E;
+    color: #F5ECD5;
+    text-align: center;
+    border-radius: 6px;
+    padding: 4px;
+    transition: width 0.2s ease-out;
+}
+
+.input:focus{
+    outline: none;
+    width: 220px;
+    z-index: 0;
+}
+
+.input[type=number]::-webkit-inner-spin-button, .input[type=number]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+}
+
+.haduh label{
+    transition: .2s ease-out;
+    padding: 0px 0px 0px 4px;
+}
+
+.haduh:focus-within label, .input:not(:placeholder-shown) + label{
+    background-color: #3D3D3D;
+    border-radius: 2px;
+    transform: translate(-28px, 6px);
+    z-index: 1;
+}
+
+.poster form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 320px;
+    margin: 32px 0px 32px 0px;
+}
+
+.poster{
+    background-color: #3D3D3D;
+    width: 640px;
+    height: 500px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    transition: .4s ease-out;
+}
+
+.poster:hover, .poster:focus-within{
+    box-shadow: 0px 0px 12px 8px #578E7E;
+}
+
+.poster button{
+    padding: 12px;
+    background-color: green;
+    color: #F5ECD5;
+    border: none;
+    border-radius: 8px;
+    transition: .2s ease-out;
+}
+
+.poster button:hover, .poster button:focus{
+    background-color: #578E7E;
+    cursor: pointer;
+    outline: none;
+}
+
+.poster button:active{
+    transform: scale(0.8);
+}
+
+.animation{
+    display: flex;
+    flex-direction: column;
+}
+
+.animation h1{
+    bottom: -32px;
+    text-align: center;
+    animation: tes 1s linear infinite;
+}
+
+@keyframes tes{
+    0%  {color: #578E7E; transform: scale(1);}
+    25% {color: #F5ECD5; transform: scale(1.05);}
+    50% {color: #578E7E; transform: scale(1.1);}
+    75% {color: #FFFAEC; transform: scale(1.05);}
+    100%{color: #578E7E; transform: scale(1);}
+}
