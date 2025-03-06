@@ -7,6 +7,9 @@
 </head>
 <body>
     <div class="container">
+        <div class="title">
+            GRADING SYSTEM
+        </div>
         <div class="poster">
             <!-- <div class="teks">
                 <?php
@@ -40,7 +43,7 @@
             </form>
 
             <div class="animation">
-                <h3>AVERAGE</h3>
+                
 
                 <?php
                     if(isset($_POST['ave'])){
@@ -49,19 +52,20 @@
                         $mandarin = $_POST['mandarin'];
                         $anth = $_POST['anth'];
                         $ave = ($math + $phy + $mandarin + $anth)/4;
-
+                        
+                        echo "<h3>AVERAGE</h3>";
                         echo "<h1>$ave</h1>";
 
                         if($ave <= 100 && $ave > 90){
-                            echo "<h1>A</h1>";
+                            echo "<h5>Your grade is <i>A</i></h5>";
                         } elseif($ave <= 90 && $ave > 80){
-                            echo "<h1>B</h1>";
+                            echo "<h5>Your grade is <i>B</i></h5>";
                         } elseif($ave <= 80 && $ave > 70){
-                            echo "<h1>C</h1>";
+                            echo "<h5>Your grade is <i>C</i></h5>";
                         } elseif($ave <= 70 && $ave > 60){
-                            echo "<h1>D</h1>";
+                            echo "<h5>Your grade is <i>D</i></h5>";
                         } elseif($ave <= 60 && $ave >= 0){
-                            echo "<h1>FAILED</h1>";
+                            echo "<h5>Your grade is <i>FAILED</i></h5>";
                         }
                     }
                 ?>
@@ -71,5 +75,7 @@
         </div>
         
     </div>
+
+    
 </body>
 </html>
