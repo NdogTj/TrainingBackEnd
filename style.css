@@ -1,28 +1,30 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     background-color: #3D3D3D;
     color: #F5ECD5;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.container{
+.container {
     width: 100%;
-    height: 95%;
+    height: 85%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.title{
+.title {
     font-size: 56px;
+    text-align: center;
+    margin-top: 32px;
 }
 
-.haduh{
+.haduh {
     margin-bottom: 8px;
     width: 200px;
     height: 150px;
@@ -32,7 +34,7 @@ body{
     justify-content: space-around;
 }
 
-.input{
+.input {
     width: 180px;
     background-color: #3D3D3D;
     border: 2px solid #578E7E;
@@ -43,41 +45,41 @@ body{
     transition: width 0.2s ease-out;
 }
 
-.input:focus{
+.input:focus {
     outline: none;
     width: 220px;
     z-index: 0;
 }
 
-.input[type=number]::-webkit-inner-spin-button, .input[type=number]::-webkit-outer-spin-button{
+.input[type=number]::-webkit-inner-spin-button, .input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
 }
 
-.haduh label{
+.haduh label {
     transition: .2s ease-out;
     padding: 0px 0px 0px 4px;
 }
 
-.haduh:focus-within label, .input:not(:placeholder-shown) + label{
+.haduh:focus-within label, .input:not(:placeholder-shown)+label {
     background-color: #3D3D3D;
     border-radius: 2px;
-    transform: translateY(12px);
+    transform: translateY(10px);
     z-index: 1;
 }
 
-.poster form{
+.poster form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 320px;
+    height: 380px;
     margin: 32px 0px 32px 0px;
 }
 
-.poster{
+.poster, .container-report {
     background-color: #3D3D3D;
     width: 640px;
-    height: 500px;
+    height: 560px;
     border-radius: 24px;
     display: flex;
     flex-direction: column;
@@ -86,47 +88,107 @@ body{
     transition: .4s ease-out;
 }
 
-.poster:hover, .poster:focus-within{
+.container-report{
+    width: 1000px;
+}
+
+.poster:hover, .poster:focus-within {
     box-shadow: 0px 0px 12px 8px #578E7E;
 }
 
-.poster button{
+/* =============== BUTTON =============== */
+#submit, #add {
     padding: 12px;
-    background-color: green;
-    color: #F5ECD5;
     border: none;
     border-radius: 8px;
     transition: .2s ease-out;
+    color: #F5ECD5;
 }
 
-.poster button:hover, .poster button:focus{
-    background-color: #578E7E;
+#submit{
+    background-color: green;
+}
+
+#add{
+    background-color: lightseagreen;
+}
+
+#submit:hover, #submit:focus, #add:hover, #add:focus {
+    background-color: black;
     cursor: pointer;
     outline: none;
 }
 
-.poster button:active{
+.container-button button:active {
     transform: scale(0.8);
 }
+/* ========================================= */
 
-.animation{
+.animation {
     display: flex;
     flex-direction: column;
 }
 
-.animation h1{
+.animation h1 {
     text-align: center;
     animation: tes 1s linear infinite;
 }
 
-.animation h3, .animation h5{
+.animation h3, .animation h5 {
     text-align: center;
 }
 
-@keyframes tes{
-    0%  {color: #578E7E; transform: scale(1);}
-    25% {color: #F5ECD5; transform: scale(1.05);}
-    50% {color: #578E7E; transform: scale(1.1);}
-    75% {color: #FFFAEC; transform: scale(1.05);}
-    100%{color: #578E7E; transform: scale(1);}
+@keyframes tes {
+    0% {
+        color: #578E7E;
+        transform: scale(1);
+    }
+
+    25% {
+        color: #F5ECD5;
+        transform: scale(1.05);
+    }
+
+    50% {
+        color: #578E7E;
+        transform: scale(1.1);
+    }
+
+    75% {
+        color: #FFFAEC;
+        transform: scale(1.05);
+    }
+
+    100% {
+        color: #578E7E;
+        transform: scale(1);
+    }
 }
+
+#show-report {
+    margin-top: 4px;
+    border-collapse: collapse;
+    width: 900px;
+}
+
+#show-report th{
+    height: 56px;
+    background-color: #578E7E;
+}
+
+#show-report th, #show-report td{
+    border: 2px solid #578E7E;
+    padding: 8px;
+    text-align: center;
+    vertical-align: center;
+}
+
+#show-report tr:nth-child(even){
+    background-color: rgb(89, 87, 87);
+}
+
+#show-report tr:hover{
+    background-color: green;
+    cursor: pointer;
+}
+
